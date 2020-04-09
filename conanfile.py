@@ -4,7 +4,7 @@ import os
 
 
 class WaylandConan(ConanFile):
-    name = "wayland"
+    name = "libwayland"
     description = "Wayland is a project to define a protocol for a compositor to talk to its clients as well as a library implementation of the protocol"
     topics = ("conan", "wayland")
     url = "https://github.com/bincrafters/conan-wayland"
@@ -48,7 +48,7 @@ class WaylandConan(ConanFile):
 
     def source(self):
         tools.get(**self.conan_data["sources"][self.version])
-        extracted_dir = self.name + "-" + self.version
+        extracted_dir = "wayland-" + self.version
         os.rename(extracted_dir, self._source_subfolder)
         tools.replace_in_file(os.path.join(self._source_subfolder, 'meson.build'), "subdir('tests')", "#subdir('tests')")
 
