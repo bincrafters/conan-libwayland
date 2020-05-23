@@ -38,7 +38,7 @@ class WaylandConan(ConanFile):
         self.requires("expat/2.2.9")
     
     def build_requirements(self):
-        self.build_requires('meson/0.54.1')
+        self.build_requires('meson/0.54.2')
 
     def configure(self):
         del self.settings.compiler.libcxx
